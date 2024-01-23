@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--Cuando un item del Bottom Navigation View esté seleccionado se le aplica ese color-->
+    <item android:color="@color/secondary" android:state_checked="true"/>
+    <!--Y por defecto tendrá este color-->
+    <item android:color="@color/accent"/>
+</selector>

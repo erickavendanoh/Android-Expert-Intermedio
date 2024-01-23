@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.MainActivity">
+
+    <!--El FragmentContainerView es como una caja en la que se guarda el grafo de navegación (en este caso "main_graph.xml") así como los Fragment que involucra, y va a cargar esos Fragment, y según el espacio que le asignemos a este FragmentContainerView será el espacio en el que se muestren los Fragment.-->
+    <!--También se encarga de la navegación, ya que si se selecciona otro Fragment solo cambia y no cierra la Activity para hacerlo-->
+    <!--Recordar que en algunos componentes el "match_parent" se pone como "0dp"-->
+    <!--Con " app:defaultNavhost="true" " indicamos que este FragmentContainerView es el principal-->
+    <!--Lo de " android:name="androidx.navigation.fragment.NavHostFragment" " se debe poner para que funcione, así porque sí XD-->
+    <!--En "app:navGraph" se asigna el grafo de navegación (en este caso "main_graph.xml"). Y como vista previa se muestra el definido en ese archivo como el Fragment principal (el que se muestra primero)-->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/main_graph" />
+
+    <!--Menú de abajo, con el que navegaremos entre las pantallas (Fragments)-->
+    <!--Para la parte del menú se creo carpeta "menu" dentro de "res", luego clic derecho->New->"Menu Resource File" para "bottom_menu.xml"-->
+    <!--Con " app:menu="@menu/bottom_menu" " se le está asignando el menú creado en ese archivo a este Bottom Navigation View-->
+    <!--Con " app:itemIconTint="@color/bottom_nav_selector" " y " app:itemTextColor="@color/bottom_nav_selector" " se le están aplicando los colores de lo configurado en el selector ("bottom_nav_selector.xml") a cada item-->
+    <!--" app:itemActiveIndicatorStyle="@null" " se usó para quitar lo del color que se generá alrededor del icono (especie de indicador) cuando se selecciona un item-->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavView"
+        android:layout_width="0dp"
+        android:background="@color/primaryDark"
+        android:layout_height="wrap_content"
+        app:itemTextColor="@color/bottom_nav_selector"
+        app:itemIconTint="@color/bottom_nav_selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_menu"
+        app:itemActiveIndicatorStyle="@null"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

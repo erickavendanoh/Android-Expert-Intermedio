@@ -1,0 +1,26 @@
+//Arquitectura
+//Para este proyecto se trabajará/organizará con base a MVVM y Clean Architecture
+//"MVVM" es un patrón de diseño de aruitectura, es "Model View ViewModel", donde "Model" son los datos o de donde se recolectan (como APIs, BD, etc.), "View" es la parte visual (las pantallas donde se muestra la información) y "ViewModel" es el enlace entre estas dos, el que trae la información del Model y lo coloca en el View (como un Controller en MVC)
+//"Clean Architecture" es un patrón de diseño de arquitectura, indica como debemos organizar el proyecto (capas/carpetas), para qué es cada archivo y así
+//En carpeta "domain" va la lógica del negocio, ahí no debe estar en un solo lenguaje en especifíco sino que debe ser "general" para que todos los involucrados en el proyecto, independientemente del lenguaje que estén empleando sepán que hacer. "Es la parte analista"
+//En carpeta "ui" va todo lo relacionado a la parte visual, también los ViewModel. "Es la parte que dibuja"
+//En carpeta "data" va todo lo relacionado a de donde vamos a guardar y recuperar la información, ya sea de bases de datos, APIs, ficheros, etc. "Es la parte que realmente trabaja"
+//Si el proyecto es pequeño/mediano basta con las 3 capas/carpetas "data", "domain" y "data". Pero si ya es muy grande, a nivel empresa, se haría una carpeta para cada feature (login, index, cart, etc.) y para cada una se tendrían dentro las 3 carpetas ("data", "domain", "ui") correspondientes
+
+//Para 'optimizar' los imports (quitar aquellos que se ponen por defecto pero que no emplearemos) ir a pestaña "Code"->"Optimize imports"
+
+//Se usará la librería "Navigation component" que simplifica y gestiona la navegación entre Activitys, Fragments, etc. de una forma sencilla, comoda y segura. Lo que antes se tenía que hacer manualmente ya lo incluye la librería. Importada correspondientemente en "build.gradle.kts (Module :app)" (señalado con comentario "//NavComponent")
+//Se empleará un "grafo de navegación", que es como un mapa de navgeación, donde cada punto vendrían a ser cada pantalla, y de esta forma se pueda determinar que rutas siga la aplicación en cuanto a navegación entre pantallas...
+//...lo correspondiente a ello está en carpeta "navigation" creada dentro de carpeta "res" (para "main_graph.xml" clic derecho->new->Navigation Resource File)
+
+//Algunas dependencias/librerías (como la de "Navigation Component" por ejemplo) emplean una versión de Sdk mayor, ya que por ejemplo cuando creamos este proyecto por default venía la versión 33, pero librerías como esa al querer emplearlas da error porque requieren la 34...
+//...para ello, en "build.gradle.kts (Module :app)" se cambia el valor en "compileSdk =" y "targetSdk =" a 34 (en caso de que se empleen ptras que requieran versiones mayores o así pues ya se pone el valor de la versión que se indique en el mensaje de error)
+
+//Para la parte del "palmistry" (pantalla donde esta el marco de la mano para que el usuario la coloque y vea lo de las líneas y eso) para la parte de poder usar la webcam al momento de crear el emulador se selecciona el botón "Show Advanced settings"->en parte "Camera" en las opciones de "Front" y "Back" se selecciona "Webcam0"
+
+//Además de solo los colores también hay "selectores" los cuales se aplican a componentes que pueden tener varios estados (seleccionado, no seleccionado, etc.)...
+//...un selector es como una clase, y archivo .xml, que tiene distintos colores dependiendo de los estados del componente. En este caso se creó carpeta "color" dentro de "res"->clic derecho->New->"Color Resource File" y a un archivo se nombró "bottom_nav_selector.xml"
+
+//Para guardar el código en un repositorio de Git para no perderlo guardándolo solo de forma local, o para hacerlo colaborativo y así...
+//...Clic en pestaña VCS->"Enable Version Control Integration"->Opción "Git"->OK->Abrimos terminal haciendo clic en pestaña de abajo "Terminal"->Ponemos comando "git add ."->Hacemos commit (una forma es ir a pestaña "Git"->opción "Commit..."->Se le pone una descripción, en este caso al ser la primera vez se le puso "initial commit"->"Commit")
+
