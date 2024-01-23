@@ -22,5 +22,5 @@
 //...un selector es como una clase, y archivo .xml, que tiene distintos colores dependiendo de los estados del componente. En este caso se creó carpeta "color" dentro de "res"->clic derecho->New->"Color Resource File" y a un archivo se nombró "bottom_nav_selector.xml"
 
 //Para guardar el código en un repositorio de Git para no perderlo guardándolo solo de forma local, o para hacerlo colaborativo y así...
-//...Clic en pestaña VCS->"Enable Version Control Integration"->Opción "Git"->OK->Abrimos terminal haciendo clic en pestaña de abajo "Terminal"->Ponemos comando "git add ."->Hacemos commit (una forma es ir a pestaña "Git"->opción "Commit..."->Se le pone una descripción, en este caso al ser la primera vez se le puso "initial commit"->"Commit")
+//...Clic en pestaña VCS->"Enable Version Control Integration"->Opción "Git"->OK->Abrimos terminal haciendo clic en pestaña de abajo "Terminal"->Ponemos comando "git add ."->Hacemos commit (una forma es ir a pestaña "Git"->opción "Commit..."->Se le pone una descripción, en este caso al ser la primera vez se le puso "initial commit"->"Commit"->Si es el caso presionar "Commit anyway")
 
