@@ -23,4 +23,6 @@
 
 //Para guardar el código en un repositorio de Git para no perderlo guardándolo solo de forma local, o para hacerlo colaborativo y así...
 //...Clic en pestaña VCS->"Enable Version Control Integration"->Opción "Git"->OK->Abrimos terminal haciendo clic en pestaña de abajo "Terminal"->Ponemos comando "git add ."->Hacemos commit (una forma es ir a pestaña "Git"->opción "Commit..."->Se le pone una descripción, en este caso al ser la primera vez se le puso "initial commit"->"Commit"->Si es el caso presionar "Commit anyway")
+//Luego, se crea un repositorio en GitHub (ya sé como, desde la página de mi GitHub, botón en "New"->Le ponemos un nombre (en este caso fue "Android-Expert-Intermedio")->Una descripción->En este caso no se añadió el README file->Se crea), copiamos el link del repositorio que aparece en pantalla que se muestra después de crearlo, luego en Android Studio damos clic en pestaña "Git"->Opción "Manage Remotes"->Se de clic en simbolo "+" y se pone el link)->OK
+//Una vez hecho esto se puede hacer un "Push", vamos a pestaña "Git"->"Push"->clic en botón "Push"
 
