@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.erickavendanoh.horoscapp.databinding.FragmentHoroscopeBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 //Se quitó mucho del código que ya traía "por defecto" este archivo cuando se creó el Fragment y se dejo solo el poco a utilizar, ya después se fue agregando el propio y así
 
+@AndroidEntryPoint
 class HoroscopeFragment : Fragment() {
 
     //El View Binding es un poco distinto en los Fragment que en los Activity

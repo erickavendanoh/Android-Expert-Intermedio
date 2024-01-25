@@ -12,7 +12,7 @@
 //Se usará la librería "Navigation component" que simplifica y gestiona la navegación entre Activitys, Fragments, etc. de una forma sencilla, comoda y segura. Lo que antes se tenía que hacer manualmente ya lo incluye la librería. Importada correspondientemente en "build.gradle.kts (Module :app)" (señalado con comentario "//NavComponent")
 //Se empleará un "grafo de navegación", que es como un mapa de navgeación, donde cada punto vendrían a ser cada pantalla, y de esta forma se pueda determinar que rutas siga la aplicación en cuanto a navegación entre pantallas...
 //...lo correspondiente a ello está en carpeta "navigation" creada dentro de carpeta "res" (para "main_graph.xml" clic derecho->new->Navigation Resource File)
-z
+
 //Algunas dependencias/librerías (como la de "Navigation Component" por ejemplo) emplean una versión de Sdk mayor, ya que por ejemplo cuando creamos este proyecto por default venía la versión 33, pero librerías como esa al querer emplearlas da error porque requieren la 34...
 //...para ello, en "build.gradle.kts (Module :app)" se cambia el valor en "compileSdk =" y "targetSdk =" a 34 (en caso de que se empleen ptras que requieran versiones mayores o así pues ya se pone el valor de la versión que se indique en el mensaje de error)
 
@@ -30,3 +30,9 @@ z
 
 //Para añadir y poder emplear otras fuentes de texto distintas a la que trae Android por defecto (Roboto), es meterse a https://fonts.google.com/ -> elegir una fuente->dar clicl en ella y ya sea descargar todas las variantes (se descarga un .zip con los .ttf dentro) o una en especifíco y descragar su .ttf ->crear carpeta "font" en "res"->se coloca el archivo .ttf dentro. Y acuando se quiera utilizar esa fuente en algún texto simplemente con su atributo "fontFamily" y haciendo referencia a la fuente puesta (ej. " android:fontFamily="@font/dancing" ")
 
+//La "inyección de dependencias" automatiza y simplifica la gestión de dependencias. Por ejemplo hay veces que para usar una clase esta emplea dos objetos, por lo que tenemos que importar las clases de las que sean estos objetos, pero para uno de ellos aparte tenemos que definirlo y crear a su vez otros 4 objetos y así. Entonces para no estar haciendo todo lo relacionado a las importaciones requeridas y así manualmente, con la inytección de dependecncias todo esto se hace "por detrás" de manera automática, ósea ya solito.
+//"DaggerHilt" es la herramienta recomendada por Google para lo relacionado a la gestión de dependencias. (Importada correspondientemente en "build.gradle.kts (Module :app)" así como la explicación allí de todo lo demás que se agregó en otros lados para lo que ocupa para funcionar )
+//El archivo "application" es la PRIMERA clase que se carga cuando se ejecuta un proyecto de Android. Por lo que ahí suelen ir las configuraciones "generales" de toda la aplicación...
+//...en el caso de esta aplicación este archivo fue el creado a nivel carpeta "horoscapp" llamado "HoroscApp" (una práctica habitual es a estos archivos colocarles el nombre del proyecto seguido de la palabra "App", pero como este ya tenía la palabra "App" en su nombre, solo se puso una vez)...
+//...en ese archivo fue donde se configuro lo de DaggerHilt para esta aplicación.
+//Ahora para usar DaggerHilt en todos los componentes (clases/archivos) (Activity, Fragment, etc.) de la aplicación, se deben preparar para ser ya sea tanto "inyectados" como "inyectables" (hablando de dependencias). Esto se logra poniendo sobre las "class" "@AndroidEntryPoint", para indicar que puede recibir cosas inyectadas

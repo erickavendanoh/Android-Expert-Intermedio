@@ -8,11 +8,13 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.erickavendanoh.horoscapp.R
 import com.erickavendanoh.horoscapp.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 //En esta aplicación, a diferencia de las hechas en el curso básico (proyecto "AndroidMaster"), solo habrá un Activity y varios "fragments", ya que en las otras se hacía para cada pantalla otro Activity. En este caso no, para las diferentes pantallas se usaran los "fragments"...
 //...un "fragment" es una vista o pantalla, como lo de un Activity, pero "más reutilizable" porque un Activity puede tener varios "fragments" (donde cada uno a su vez tiene su parte visual y su parte lógica, los archivos correspondientes uno dentro de la carptea correspondiente en "ui" y la vista dentro de "res"->"layout"... primero se crea el package con el nombre, relacionado a lo que va la pantalla->clic derecho->"New"->"Fragment"->Ya vienen varias opciones de algunos ya "hechos", en este caso se irá seleccionando el de "Fragment (blank)" que es el que no trae tanto para nosotros ir haciendo todo).
 //En este caso este Activity será como el contenedor principal de todos los "fragments" que generemos, y este solo tendra una "tool bar", un "bottom bar" y ya lo de dentro lo de los "fragments". Esta es una forma cotidiana de trabajar en Android, por el concepto de "Single Activity" (como en Angular, con el "Single Page Application"). Y forma muy similar de trabajar en Jetpack Compose también.
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     //Lo del ViewBinding (configurado/activado en "build.gradle.kts (Module :app)")
