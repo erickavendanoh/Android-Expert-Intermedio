@@ -6,6 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.MainActivity">
 
+    <!--Las Toolbar que trae Android por defecto (androidx.appcompat.widget.Toolbar) se tienen que configurar y generalmente no se usan mucho, por lo que crearemos una propia-->
+    <!--Con " android:layout_height="?attr/actionBarSize" " es para que la Toolbar tenga la altura exacta-->
+    <FrameLayout
+        android:id="@+id/toolbar"
+        android:background="@color/primaryDark"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        
+        <!--Lo de " android:fontFamily="@font/dancing" " es para aplicarle una de las fuentes que se descragaron de https://fonts.google.com/ y se pusieron dentro de carpeta "font" en "res"-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textStyle="bold"
+            android:fontFamily="@font/dancing"
+            android:textSize="30sp"
+            android:textColor="@color/secondary"
+            android:layout_gravity="center"
+            />
+        
+    </FrameLayout>
+
     <!--El FragmentContainerView es como una caja en la que se guarda el grafo de navegación (en este caso "main_graph.xml") así como los Fragment que involucra, y va a cargar esos Fragment, y según el espacio que le asignemos a este FragmentContainerView será el espacio en el que se muestren los Fragment.-->
     <!--También se encarga de la navegación, ya que si se selecciona otro Fragment solo cambia y no cierra la Activity para hacerlo-->
     <!--Recordar que en algunos componentes el "match_parent" se pone como "0dp"-->
@@ -21,7 +46,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:navGraph="@navigation/main_graph" />
 
     <!--Menú de abajo, con el que navegaremos entre las pantallas (Fragments)-->

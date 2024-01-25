@@ -26,4 +26,7 @@ z
 //Luego, se crea un repositorio en GitHub (ya sé como, desde la página de mi GitHub, botón en "New"->Le ponemos un nombre (en este caso fue "Android-Expert-Intermedio")->Una descripción->En este caso no se añadió el README file->Se crea), copiamos el link del repositorio que aparece en pantalla que se muestra después de crearlo, luego en Android Studio damos clic en pestaña "Git"->Opción "Manage Remotes"->Se de clic en simbolo "+" y se pone el link)->OK
 //Una vez hecho esto se puede hacer un "Push", vamos a pestaña "Git"->"Push"->clic en botón "Push"
 
+//Se añadió el README.md, primero se abre la aprte de archivos, se cambia la vista de "Android" a "Project"->clic derecho sobre la carpeta raiz->New->File->"README.md" (ahí se copió lo que había en el archivo con el mismo nombre en el repositorio de Git del curso), se hizo el Commit luego el Push y ya
+
+//Para añadir y poder emplear otras fuentes de texto distintas a la que trae Android por defecto (Roboto), es meterse a https://fonts.google.com/ -> elegir una fuente->dar clicl en ella y ya sea descargar todas las variantes (se descarga un .zip con los .ttf dentro) o una en especifíco y descragar su .ttf ->crear carpeta "font" en "res"->se coloca el archivo .ttf dentro. Y acuando se quiera utilizar esa fuente en algún texto simplemente con su atributo "fontFamily" y haciendo referencia a la fuente puesta (ej. " android:fontFamily="@font/dancing" ")
 
