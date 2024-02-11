@@ -6,6 +6,10 @@
     android:background="@color/primary"
     tools:context=".ui.horoscope.HoroscopeFragment">
 
-
-
+    <!--En teoría un Recycler View debería ir dentro de un Constraint Layout, pero cuando no se cargan tantas cosas con un Frame Layout también basta, y de hecho consume menos recursos-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHoroscope"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    
 </FrameLayout>

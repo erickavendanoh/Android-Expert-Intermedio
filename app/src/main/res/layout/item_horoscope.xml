@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--El id (" android:id="@+id/parent" ") es para lo de las funciones lambda, donde por el flujo del Adapter y ViewModel básicamente se le asocia la función que corresponde a la función lambda a cada item creado. Y este id es para referirnos a cada item y asociar la función a su respectivo evento "setOnClickListener"-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:padding="8dp"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivHoroscope"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/dancing"
+        android:textSize="28sp"
+        android:textColor="@color/secondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivHoroscope" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
