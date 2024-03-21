@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!--Permiso de Internet para la aplicación. Para que funcione todo lo de APIs y demás-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".HoroscApp"
         android:allowBackup="true"

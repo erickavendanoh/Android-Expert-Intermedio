@@ -1,9 +1,29 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <!--ESTE es el estilo que ya venía por defecto, pero lo sobreescribimos agregandole estilos dentro de la etiqueta acorde a los de la aplicación-->
     <!-- Base application theme. -->
     <style name="Base.Theme.HoroscApp" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor">@color/secondary</item> <!--Se le está cambiando el color de la barra donde están las notificaciones y demás que viene por defecto (morado) al "secondary"-->
     </style>
 
+    <!--En "AndroidManifest.xml" (dentro de etiqueta  <application...> en parte " android:theme="@style/Theme.HoroscApp" ")podremos ver que el estilo que se le está aplicando a toda la aplicación es este, "Theme.HoroscApp", que a su vez hereda del de arriba ("Base.Theme.HoroscApp")-->
     <style name="Theme.HoroscApp" parent="Base.Theme.HoroscApp" />
+
+    <!--Estilo personalizado creado para dar formato a los textos de título conforme el diseño principal de la app, para no estar repitiendo las siguientes líneas en cada TextView para darle ese estilo y ya solo asignarle este estilo (con style="@style/Title"):-->
+<!--    android:textStyle="bold"-->
+<!--    android:fontFamily="@font/dancing"-->
+<!--    android:textSize="30sp"-->
+<!--    android:textColor="@color/secondary"-->
+    <style name="Title">
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/dancing</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/secondary</item>
+    </style>
+
+    <!--Estilo personalizado creado para dar formato a los textos de contenido-->
+    <!--Como comparte ciertos valores con el estilo "Title" definido arriba, para no repetir esas líneas este estilo "Body" heredará de ese estilo, y ya solo los que cambien serán los que se pongan acá dentro con sus respectivos valores (se sobreescriben)-->
+    <style name="Body" parent="Title">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">20sp</item>
+    </style>
 </resources>
